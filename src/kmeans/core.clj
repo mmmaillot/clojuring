@@ -16,6 +16,9 @@
       y
       z)))
 
+(defn closest-to-x [x distance]
+  (partial closest-cluster distance x))
+
 (defn closest [x means distance]
-  )
+  (reduce (closest-to-x x distance) means))
 
